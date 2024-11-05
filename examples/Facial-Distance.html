@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Facial Distance API</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Face Analyzer REST API Script">
+    <meta name="author" content="Code-Silicon">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/toastr.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="shortcut icon" type="image/png" href="img/logo.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div>
+    <nav id="topNav" class="navbar fixed-top top-navbar">
+        <div class="container-fluid">
+            <button id="MenuBar" class="btn mt-2  btnn">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <div id="sideNav" class="side-nav-open">
+        <div class="side-nav-top text-center bg-white ">
+            <img alt="" class="side-nav-logo" src="img/logo.svg" />
+        </div>
+        <a href="/" class="side-bar-item" >
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Home</span>
+        </a>
+        <a href="/Face-Match.html" class="side-bar-item ">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Face Match</span>
+        </a>
+        <a href="/Face-Expression.html" class="side-bar-item ">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Face Expression</span>
+        </a>
+        <a href="/Age-Gender.html" class="side-bar-item ">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Age Gender Detection</span>
+        </a>
+        <a href="/Face-Landmark.html" class="side-bar-item">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Face Landmark</span>
+        </a>
+        <a href="/Facial-Distance.html" class="side-bar-item side-bar-item-active">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Facial Distance</span>
+        </a>
+        <a href="/Person-Count.html" class="side-bar-item">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Person Count</span>
+        </a>
+        <a href="/Person-Count-With-Age-Gender.html" class="side-bar-item">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Person Count Gender</span>
+        </a>
+    </div>
+
+
+    <div  id="content" class="content">
+        <div class="container  content-body ">
+            <div class="container-fluid m-0 p-0">
+                <div class="row m-0 p-0">
+                    <div class="col-12 m-0 p-0">
+                        <div class="card m-0">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link text-bold text-dark active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Live Example</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link text-bold text-dark" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">API Defination</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link text-bold text-dark" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Example Code</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane p-0 m-0 fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                                        <div class="container-fluid  p-0 m-0">
+                                            <div class="row p-0 m-0">
+                                                <div class="col-md-6 p-0 m-0">
+                                                    <div class="row p-0 m-0">
+                                                        <div class="col-md-6 animated fadeIn">
+                                                            <img id="photoFistPlaceholder" class="photo" src='img/photoPlace.svg' />
+                                                            <input id="photoFist" type="file" class="form-control my-1" />
+                                                            <button id="GetResult" class="btn  w-100 my-3 btnn">Get Result</button>
+
+                                                             <!-- Webcam section -->
+                                                             <button id="StartWebcam" class="btn w-100 my-3 btnn">Start Webcam</button>
+                                                             <div id="webcamContainer" class="d-none">
+                                                                 <video id="webcam" width="320" height="240" autoplay></video>
+                                                                 <button id="CapturePhoto" class="btn  w-100 my-3 btnn">Capture Photo</button>
+                                                                 
+                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <pre class="json-view animated fadeIn" id="json-display"></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane p-0 m-0 fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                                        <div class="container-fluid m-0 p-0">
+                                            <div class="row m-0 p-0">
+                                                <div class="col-md-12">
+                                                    <h6 class="my-2">
+                                                        <b>API Name:</b> Facial Distance
+                                                    </h6>
+                                                    <h6 class="my-2">
+                                                        <b>Request Method:</b> POST
+                                                    </h6>
+                                                    <h6 class="my-2">
+                                                        <b>Request End:</b>
+                                                    </h6>
+                                                    <p class="code my-2">/api/v1/FacialDistance</p>
+                                                    <h6 class="my-2">
+                                                        <b>Request Body:</b>
+                                                    </h6>
+                                                    <pre class="json-view animated my-2 fadeIn" id="json-display-2"></pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane p-0 m-0  fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+				              <pre>
+								<div class="code">
+let data={
+	imgBase64:'',
+}
+
+var config = {
+	method: 'post',
+	url: 'http://localhost:8080/api/v1/FacialDistance',
+	headers: { },
+	data : data
+};
+
+axios(config)
+.then(function (response) {
+	console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+	console.log(error);
+});
+
+</div>
+							</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div id="FullScreenProgress" class="LoadingOverlay d-none  center-screen">
+    <img class="animated zoomIn" src="img/Spinner.svg">
+</div>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/bootstrap.bundle.js"></script>
+<script src="js/lib/utility.js"></script>
+<script src="js/lib/toastr.min.js"></script>
+<script src="js/lib/jquery.json-editor.min.js"></script>
+<script src="js/lib/axios.min.js"></script>
+<script src="js/api-request/Facial-Distance.js"></script>
+<script src="js/api-request/webcam.js"></script>
+
+
+</body>
+</html>

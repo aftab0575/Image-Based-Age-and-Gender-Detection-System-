@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Face Analyzer REST API Script">
+    <title>🔍 Face Analyzer REST API Script</title>
+
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/toastr.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="shortcut icon" type="image/png" href="img/logo.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <nav id="topNav" class="navbar fixed-top fixed-top top-navbar">
+            <div class="container-fluid">
+                <button id="MenuBar" class="btn mt-2  btnn">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="sideNav" class="side-nav-open">
+        <div class="side-nav-top text-center bg-white ">
+            <img alt="Company Logo" class="side-nav-logo" src="img/logo.svg" />
+        </div>
+         <a href="/" class="side-bar-item  side-bar-item-active" >
+             <i class="fa fa-circle-notch text-dark"></i>
+             <span class="side-bar-item-caption">Home</span>
+          </a>
+        <a href="/Face-Match.html" class="side-bar-item">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Face Match</span>
+        </a>
+        <a href="/Face-Expression.html" class="side-bar-item">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Face Expression</span>
+        </a>
+        <a href="/Age-Gender.html" class="side-bar-item">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Age Gender Detection</span>
+        </a>
+        <a href="/Face-Landmark.html" class="side-bar-item">
+            <i class="fa fa-circle-notch text-dark"></i>
+            <span class="side-bar-item-caption">Face Landmark</span>
+         </a>
+         <a href="/Facial-Distance.html" class="side-bar-item">
+             <i class="fa fa-circle-notch text-dark"></i>
+             <span class="side-bar-item-caption">Facial Distance</span>
+         </a>
+         <a href="/Person-Count.html" class="side-bar-item">
+             <i class="fa fa-circle-notch text-dark"></i>
+             <span class="side-bar-item-caption">Person Count</span>
+         </a>
+          <a href="/Person-Count-With-Age-Gender.html" class="side-bar-item">
+              <i class="fa fa-circle-notch text-dark"></i>
+              <span class="side-bar-item-caption">Person Count Gender</span>
+          </a>
+        </div>
+
+        <div  id="content" class="content">
+            <div class="container  content-body ">
+                <div class="row">
+                    <div class="col-12 p-2 ">
+                            <div class="card-body">
+                                <h3>Face Analyzer REST API Script</h3>
+                                <p>
+                                    This is a research and development type project that will be helpful for researchers,
+                                    analyzers, programmers, and developers who are searching for face analysis solutions.
+                                    This is a node js REST API Script implemented on top of the tensorflow.js core API.
+                                </p>
+                            </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 p-2">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5>Face Match API:</h5>
+                                <ul>
+                                    <li>Accurately detect the face.</li>
+                                    <li>Calculate the face similarity & distance.</li>
+                                    <li>High/Low match accuracy option.</li>
+                                </ul>
+                                <a class="btnn" href="Face-Match.html">Try Example</a>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="col-6 p-2">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Face Expression API:</h5>
+                                    <ul>
+                                        <li>Calculate the face details percentage for neutral, happy, sad, angry, fearful, disgusted, and surprised expressions.</li>
+                                        <li>Based on the details decide the right one.</li>
+                                    </ul>
+                                    <a class="btnn" href="Face-Expression.html">Try Example</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 p-2">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Gender & Age API:</h5>
+                                    <ul>
+                                        <li>Calculate the face details percentage for neutral, happy, sad, angry, fearful, disgusted, and surprised expressions.</li>
+                                        <li>Based on the details take decision for the right one</li>
+                                    </ul>
+                                    <a class="btnn" href="Age-Gender.html">Try Example</a>
+                                </div>
+                            </div>
+                        </div>
+						
+						<div class="col-6 p-2">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Face Landmark API:</h5>
+                                    <ul>
+										<li>Accurately detect the face and calculate image dimension and x,y  shifting position.</li>
+										<li>Calculate 68 accurate x,y facelandmark position.</li>
+                                        <li>High/Low match accuracy option.</li>
+                                    </ul>
+                                    <a class="btnn" href="Face-Landmark.html">Try Example</a>
+                                </div>
+                            </div>
+                        </div>
+						
+						
+						<div class="col-6 p-2">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Facial Distance API:</h5>
+                                    <ul>
+										<li>Calculate two-eye distance.</li>
+										<li>Calculate nose-to-eye distance.</li>
+									    <li>Calculate mouth-to-nose distance.</li>
+                                    </ul>
+                                    <a class="btnn" href="Facial-Distance.html">Try Example</a>
+                                </div>
+                            </div>
+                        </div>
+						
+						<div class="col-6 p-2">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Person Count API:</h5>
+                                    <ul>
+										<li>Accurately detect multiple faces inside the photo.</li>
+										<li>Count the number of the detected face</li>
+                                    </ul>
+                                    <a class="btnn" href="Person-Count.html">Try Example</a>
+                                </div>
+                            </div>
+                        </div>
+						
+						<div class="col-6 p-2">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5>Person Count With Age & Gender API:</h5>
+                                    <ul>
+										<li>Accurately detect multiple faces inside the photo and count.</li>
+										<li>Calculate the number of male & female face</li>
+										<li>Calculate the average age of the peoples</li>
+                                    </ul>
+                                    <a class="btnn" href="Person-Count-With-Age-Gender.html">Try Example</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/bootstrap.bundle.js"></script>
+    <script src="js/lib/utility.js"></script>
+    <script src="js/lib/toastr.min.js"></script>
+    <script src="js/lib/axios.min.js"></script>
+    <script src="js/lib/jquery.json-editor.min.js"></script>
+</body>
+</html>
